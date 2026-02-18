@@ -5,6 +5,8 @@ import { enemyTurn } from "../../data/enemy";
 
 import './index.scss';
 
+import winnerImg from "./../../assets/winner.png";
+
 export function renderBattlePage(container) {
     let state = loadGame();
 
@@ -113,7 +115,7 @@ export function renderBattlePage(container) {
                 <h2>Win </h2>
                 
                 <div class="modal__img">
-                    <img src="./../../assets/winner.png" alt="Image winner" >
+                    <img src=${winnerImg} alt="Image winner" >
                 </div>
               </div>
             </div>

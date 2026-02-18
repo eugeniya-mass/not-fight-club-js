@@ -1,0 +1,16 @@
+.page .home {
+  width: 100%;
+}
+.page .home main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page .home main button {
+  cursor: pointer;
+  padding: 10px 35px;
+  background-color: var(--active-c);
+  color: var(--white);
+  border-radius: 8px;
+  font-size: 20px;
+}/*# sourceMappingURL=index.css.map */

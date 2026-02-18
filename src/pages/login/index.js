@@ -24,6 +24,7 @@ export function renderLoginPage(container) {
 
     document.getElementById("startBtn").addEventListener("click", () => {
         const name = document.getElementById("playerName").value.trim();
+
         if (name) {
             createPlayer(name);
             window.location.hash = "#/home";
