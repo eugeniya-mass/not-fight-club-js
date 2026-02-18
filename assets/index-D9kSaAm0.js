@@ -1,4 +1,4 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const c of document.querySelectorAll('link[rel="modulepreload"]'))s(c);new MutationObserver(c=>{for(const o of c)if(o.type==="childList")for(const u of o.addedNodes)u.tagName==="LINK"&&u.rel==="modulepreload"&&s(u)}).observe(document,{childList:!0,subtree:!0});function a(c){const o={};return c.integrity&&(o.integrity=c.integrity),c.referrerPolicy&&(o.referrerPolicy=c.referrerPolicy),c.crossOrigin==="use-credentials"?o.credentials="include":c.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(c){if(c.ep)return;c.ep=!0;const o=a(c);fetch(c.href,o)}})();const _={account:{name:"",src:"",wins:0,losses:0,health:100,attack:20,critChance:25,critMultiplier:1.5,attackCount:1,blockCount:2},enemy:{name:"",src:"",health:0,attack:0,critChance:0,critMultiplier:0,attackCount:0,blockCount:0},logs:[]},k=[{id:0,src:"/src/assets/images/avatars/afrodita.png"},{id:1,src:"/src/assets/images/avatars/apollon.png"},{id:2,src:"/src/assets/images/avatars/demetra.png"},{id:3,src:"/src/assets/images/avatars/gera.png"},{id:4,src:"/src/assets/images/avatars/poseidon.png"},{id:5,src:"/src/assets/images/avatars/zevs.png"},{id:6,src:"/src/assets/images/avatars/herakl.png"},{id:7,src:"/src/assets/images/avatars/helios.png"}],y=[{id:0,name:"Kentavr",health:100,attack:20,critChance:20,critMultiplier:1.5,attackCount:1,blockCount:3,src:"/src/assets/images/enemies/kentavr.png"},{id:1,name:"Meduza",health:130,attack:8,critChance:30,critMultiplier:1,attackCount:3,blockCount:2,src:"/src/assets/images/enemies/meduza.png"},{id:2,name:"Ziklop",health:200,attack:5,critChance:50,critMultiplier:2,attackCount:1,blockCount:3,src:"/src/assets/images/enemies/ziklop.png"},{id:3,name:"Lion",health:80,attack:20,critChance:30,critMultiplier:1.5,attackCount:2,blockCount:2,src:"/src/assets/images/enemies/lion.png"}],w=["head","neck","body","belly","legs"],E="gameState";function g(){return JSON.parse(localStorage.getItem(E))||structuredClone(_)}function f(n){localStorage.setItem(E,JSON.stringify(n))}function H(n){const e=k[Math.floor(Math.random()*k.length)],a=y[Math.floor(Math.random()*y.length)],s={..._,account:{name:n,wins:0,losses:0,health:100,attack:20,critChance:25,critMultiplier:1.5,attackCount:1,blockCount:2,src:e.src},enemy:a,logs:[]};return f(s),s}function P(n){let e=g();return e.account.name=n,f(e),e}function C(){const n=g(),e=y[Math.floor(Math.random()*y.length)],a={..._,account:{...n.account,health:100},enemy:e,logs:[]};return f(a),a}function L(n,e,a,s,c){const o=document.getElementById("resultModal"),u=Math.floor(Math.random()*100)+1,d=c?s.account.critChance:s.enemy.critChance,i=c?a:s.enemy,t={isPlayerAttackPhase:c,playerName:a.name,enemyName:s.enemy.name,damage:0,hasCrit:!1,attackZone:n,hasDefense:!1};e.includes(n)&&(t.hasDefense=!0),d>=u?(t.hasCrit=!0,t.damage=i.attack*i.critMultiplier):t.hasDefense||(t.damage=i.attack),c?s.enemy.health-=t.damage:a.health-=t.damage,s.enemy.health<=0||a.health<=0?(s.enemy.health<=0&&(s.account.wins++,o.style.display="block",o.querySelector("h2").textContent=`Win ${a.name}`),a.health<=0&&(s.account.losses++,o.style.display="block",o.querySelector("h2").textContent=`Win ${s.enemy.name}`)):s.logs.push(t),f(s)}function B(n){const e=g();if(e.account.name){window.location.hash="#/home";return}n.innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const c of document.querySelectorAll('link[rel="modulepreload"]'))s(c);new MutationObserver(c=>{for(const o of c)if(o.type==="childList")for(const u of o.addedNodes)u.tagName==="LINK"&&u.rel==="modulepreload"&&s(u)}).observe(document,{childList:!0,subtree:!0});function t(c){const o={};return c.integrity&&(o.integrity=c.integrity),c.referrerPolicy&&(o.referrerPolicy=c.referrerPolicy),c.crossOrigin==="use-credentials"?o.credentials="include":c.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function s(c){if(c.ep)return;c.ep=!0;const o=t(c);fetch(c.href,o)}})();const _={account:{name:"",src:"",wins:0,losses:0,health:100,attack:20,critChance:25,critMultiplier:1.5,attackCount:1,blockCount:2},enemy:{name:"",src:"",health:0,attack:0,critChance:0,critMultiplier:0,attackCount:0,blockCount:0},logs:[]},k=[{id:0,src:new URL("/not-fight-club-js/assets/afrodita-BCvHI8Ft.png",import.meta.url).href},{id:1,src:new URL("/not-fight-club-js/assets/apollon-BnWX9W40.png",import.meta.url).href},{id:2,src:new URL("/not-fight-club-js/assets/demetra-DspPf1rC.png",import.meta.url).href},{id:3,src:new URL("/not-fight-club-js/assets/gera-fnodbJ50.png",import.meta.url).href},{id:4,src:new URL("/not-fight-club-js/assets/poseidon-CFYhaa7b.png",import.meta.url).href},{id:5,src:new URL("/not-fight-club-js/assets/zevs-BVq8UqUj.png",import.meta.url).href},{id:6,src:new URL("/not-fight-club-js/assets/herakl-07A-_dSY.png",import.meta.url).href},{id:7,src:new URL("/not-fight-club-js/assets/helios-CWiVLjus.png",import.meta.url).href}],b=[{id:0,name:"Kentavr",health:100,attack:20,critChance:20,critMultiplier:1.5,attackCount:1,blockCount:3,src:new URL("/not-fight-club-js/assets/kentavr-CbgK_27-.png",import.meta.url).href},{id:1,name:"Meduza",health:130,attack:8,critChance:30,critMultiplier:1,attackCount:3,blockCount:2,src:new URL("/not-fight-club-js/assets/meduza-B8TaU7EM.png",import.meta.url).href},{id:2,name:"Ziklop",health:200,attack:5,critChance:50,critMultiplier:2,attackCount:1,blockCount:3,src:new URL("/not-fight-club-js/assets/ziklop-eBGRrmV_.png",import.meta.url).href},{id:3,name:"Lion",health:80,attack:20,critChance:30,critMultiplier:1.5,attackCount:2,blockCount:2,src:new URL("/not-fight-club-js/assets/lion-ogHfXQE2.png",import.meta.url).href}],w=["head","neck","body","belly","legs"],M="gameState";function f(){return JSON.parse(localStorage.getItem(M))||structuredClone(_)}function v(n){localStorage.setItem(M,JSON.stringify(n))}function N(n){const e=k[Math.floor(Math.random()*k.length)],t=b[Math.floor(Math.random()*b.length)],s={..._,account:{name:n,wins:0,losses:0,health:100,attack:20,critChance:25,critMultiplier:1.5,attackCount:1,blockCount:2,src:e.src},enemy:t,logs:[]};return v(s),s}function P(n){let e=f();return e.account.name=n,v(e),e}function L(){const n=f(),e=b[Math.floor(Math.random()*b.length)],t={..._,account:{...n.account,health:100},enemy:e,logs:[]};return v(t),t}function C(n,e,t,s,c){const o=document.getElementById("resultModal"),u=Math.floor(Math.random()*100)+1,d=c?s.account.critChance:s.enemy.critChance,i=c?t:s.enemy,a={isPlayerAttackPhase:c,playerName:t.name,enemyName:s.enemy.name,damage:0,hasCrit:!1,attackZone:n,hasDefense:!1};e.includes(n)&&(a.hasDefense=!0),d>=u?(a.hasCrit=!0,a.damage=i.attack*i.critMultiplier):a.hasDefense||(a.damage=i.attack),c?s.enemy.health-=a.damage:t.health-=a.damage,s.enemy.health<=0||t.health<=0?(s.enemy.health<=0&&(s.account.wins++,o.style.display="block",o.querySelector("h2").textContent=`Win ${t.name}`),t.health<=0&&(s.account.losses++,o.style.display="block",o.querySelector("h2").textContent=`Win ${s.enemy.name}`)):s.logs.push(a),v(s)}function B(n){const e=f();if(e.account.name){window.location.hash="#/home";return}n.innerHTML=`
         <div class="page">
             <div class="login">
                 <div class="login__box">
@@ -8,7 +8,7 @@
                 </div>
             </div>
         </div>
-    `,document.getElementById("startBtn").addEventListener("click",()=>{const a=document.getElementById("playerName").value.trim();a?(H(a),window.location.hash="#/home"):alert("Введите имя!")})}const x="/not-fight-club-js/assets/home-BL45Uk7K.png",S="/not-fight-club-js/assets/user-BZrB7oB-.png",Z="/not-fight-club-js/assets/setting-DvMGuEO2.png";function b(){return`
+    `,document.getElementById("startBtn").addEventListener("click",()=>{const t=document.getElementById("playerName").value.trim();t?(N(t),window.location.hash="#/home"):alert("Введите имя!")})}const x="/not-fight-club-js/assets/home-BL45Uk7K.png",S="/not-fight-club-js/assets/user-BZrB7oB-.png",j="/not-fight-club-js/assets/setting-DvMGuEO2.png";function y(){return`
         <header class="header">
             <div class="header__box">
                 <div class="header__logo">Not Fight Club</div>
@@ -21,13 +21,13 @@
                         <img src=${S} alt="page character image" >
                     </li>
                     <li class="header__li" onclick="window.location.hash = '#/settings'">
-                        <img src=${Z} alt="page settings image" >
+                        <img src=${j} alt="page settings image" >
                     </li>
                 </ul>
             </div>
         </header>
-    `}function z(n){let e=g();if(!e.account.name){window.location.hash="#/login";return}n.innerHTML=`
-        ${b()}
+    `}function U(n){let e=f();if(!e.account.name){window.location.hash="#/login";return}n.innerHTML=`
+        ${y()}
         
         <div class="page">
             <div class="settings">
@@ -46,18 +46,18 @@
                 </div>
             </div>
         </div>
-    `;const a=document.getElementById("nameInput"),s=document.getElementById("saveNameBtn");a.addEventListener("input",()=>{const c=a.value.trim();s.disabled=!c||c===e.account.name}),document.getElementById("saveNameBtn").addEventListener("click",()=>{const c=a.value.trim();c?(e=P(c),s.disabled=!0,alert("Имя сохранено!")):alert("Имя не может быть пустым!")})}const T="/not-fight-club-js/assets/atlant-BaX5WXJp.png";function O(n){n.innerHTML=`
+    `;const t=document.getElementById("nameInput"),s=document.getElementById("saveNameBtn");t.addEventListener("input",()=>{const c=t.value.trim();s.disabled=!c||c===e.account.name}),document.getElementById("saveNameBtn").addEventListener("click",()=>{const c=t.value.trim();c?(e=P(c),s.disabled=!0,alert("Имя сохранено!")):alert("Имя не может быть пустым!")})}const Z="/not-fight-club-js/assets/atlant-BaX5WXJp.png";function z(n){n.innerHTML=`
         <div class="page">
             <div class="not-found">
                 <div class="not-found__box">
-                    <img class="not-found__img" src=${T} alt="page not found image" >
+                    <img class="not-found__img" src=${Z} alt="page not found image" >
                     <h1>Page not found</h1>
                     <button class="not-found__btn" onclick="window.location.hash = '#/login'">назад к персонажу</button>
                 </div>
             </div>
         </div>
-    `}function A(n){if(!g().account.name){window.location.hash="#/login";return}n.innerHTML=`
-        ${b()}
+    `}function R(n){if(!f().account.name){window.location.hash="#/login";return}n.innerHTML=`
+        ${y()}
         
         <div class="page">
             <div class="home">
@@ -68,8 +68,8 @@
                 </div>
             </div>
         </div>
-    `}function D(n){const e=g();if(!e.account.name){window.location.hash="#/login";return}n.innerHTML=`
-        ${b()}
+    `}function T(n){const e=f();if(!e.account.name){window.location.hash="#/login";return}n.innerHTML=`
+        ${y()}
         
         <div class="page">
             <div class="character">
@@ -110,8 +110,8 @@
               </div>
             </div>
         </div>
-    `;const a=document.getElementById("changeBtn"),s=document.getElementById("avatarModal"),c=document.getElementById("characterList"),o=document.getElementById("closeModal");function u(){c.innerHTML="",k.forEach(i=>{const t=document.createElement("img");t.src=i.src,t.alt=`Character ${i.id}`,i.src===e.account.src?t.classList.add("active"):t.onclick=function(){e.account={...e.account,src:i.src},f(e),s.style.display="none",d()},c.appendChild(t)})}function d(){const i=document.querySelector(".character__left");i&&e.account.src&&(i.style.backgroundImage=`url(${e.account.src})`)}window.onclick=function(i){i.target===s&&(s.style.display="none")},o.onclick=function(){s.style.display="none"},a.onclick=function(){u(),s.style.display="block"}}function M(n,e){return n.sort(()=>Math.random()-.5).slice(0,e)}function j(n){const e=M(w,n.attackCount),a=M(w,n.blockCount);return{attackZones:e,blockZones:a}}const q="/not-fight-club-js/assets/winner-DGjo6-_w.png";function W(n){let e=g();if(!e.account.name){window.location.hash="#/login";return}n.innerHTML=`
-        ${b()}
+    `;const t=document.getElementById("changeBtn"),s=document.getElementById("avatarModal"),c=document.getElementById("characterList"),o=document.getElementById("closeModal");function u(){c.innerHTML="",k.forEach(i=>{const a=document.createElement("img");a.src=i.src,a.alt=`Character ${i.id}`,i.src===e.account.src?a.classList.add("active"):a.onclick=function(){e.account={...e.account,src:i.src},v(e),s.style.display="none",d()},c.appendChild(a)})}function d(){const i=document.querySelector(".character__left");i&&e.account.src&&(i.style.backgroundImage=`url(${e.account.src})`)}window.onclick=function(i){i.target===s&&(s.style.display="none")},o.onclick=function(){s.style.display="none"},t.onclick=function(){u(),s.style.display="block"}}function E(n,e){return n.sort(()=>Math.random()-.5).slice(0,e)}function A(n){const e=E(w,n.attackCount),t=E(w,n.blockCount);return{attackZones:e,blockZones:t}}const D="/not-fight-club-js/assets/winner-DGjo6-_w.png";function O(n){let e=f();if(!e.account.name){window.location.hash="#/login";return}n.innerHTML=`
+        ${y()}
         
         <div class="page">
             <div class="battle">
@@ -210,18 +210,18 @@
                 <h2>Win </h2>
                 
                 <div class="modal__img">
-                    <img src=${q} alt="Image winner" >
+                    <img src=${D} alt="Image winner" >
                 </div>
               </div>
             </div>
         </div>
-    `;const a=document.getElementById("battleLog"),s=document.getElementById("resultModal"),c=document.getElementById("closeModal");function o(){const d=a.children.length/2;(e.logs?.slice(d)).forEach((t,v)=>{const m=document.createElement("div"),r=document.createElement("div");r.classList.add("right");const h=t.isPlayerAttackPhase?t.playerName:t.enemyName,l=t.isPlayerAttackPhase?t.enemyName:t.playerName;!t.hasCrit&&!t.hasDefense?m.innerHTML=`
+    `;const t=document.getElementById("battleLog"),s=document.getElementById("resultModal"),c=document.getElementById("closeModal");function o(){const d=t.children.length/2;(e.logs?.slice(d)).forEach((a,g)=>{const m=document.createElement("div"),r=document.createElement("div");r.classList.add("right");const h=a.isPlayerAttackPhase?a.playerName:a.enemyName,l=a.isPlayerAttackPhase?a.enemyName:a.playerName;!a.hasCrit&&!a.hasDefense?m.innerHTML=`
                     <div class="message">
                          <span><span class="red">${h}</span> attacked 
-                         <span class="red">${l}</span> to <span class="red">${t.attackZone}</span> and deal 
-                         <span class="red">${t.damage}</span> damage.
+                         <span class="red">${l}</span> to <span class="red">${a.attackZone}</span> and deal 
+                         <span class="red">${a.damage}</span> damage.
                     </div>
-                `:!t.hasCrit&&t.hasDefense?m.innerHTML=`
+                `:!a.hasCrit&&a.hasDefense?m.innerHTML=`
                     <div class="message">
                          <span><span class="red">${h}</span> attacked 
                          <span class="red">${l}</span> but was able to block.
@@ -229,7 +229,7 @@
                 `:m.innerHTML=`
                     <div class="message">
                          <span><span class="red">${h}</span> attacked 
-                         <span class="red">${l}</span> to <span class="red">${t.attackZone}</span> but ${l}
-                         was very lucky and crid his oppenent for <span class="red">${t.damage}</span> damage.
+                         <span class="red">${l}</span> to <span class="red">${a.attackZone}</span> but ${l}
+                         was very lucky and crid his oppenent for <span class="red">${a.damage}</span> damage.
                     </div>
-                `,a.append(m),a.append(r),a.scrollTo({top:a.scrollHeight,behavior:"smooth"})})}u(e.account),o();function u(d){const i=document.getElementById("attackBtn"),t=document.querySelectorAll('#attackZones input[type="radio"]'),v=document.querySelectorAll('#defenseZones input[type="checkbox"]');function m(){const r=[...t].filter(l=>l.checked).length===d.attackCount,h=[...v].filter(l=>l.checked).length===d.blockCount;i.disabled=!(r&&h)}t.forEach(r=>{r.addEventListener("change",()=>{[...t].filter(l=>l.checked).length>d.attackCount&&(r.checked=!1),m()})}),v.forEach(r=>{r.addEventListener("change",()=>{[...v].filter(l=>l.checked).length>d.blockCount&&(r.checked=!1),m()})}),i.addEventListener("click",()=>{const r=document.getElementById("playerHP"),h=document.getElementById("enemyHP"),l=j(e.enemy),I=[...v].filter(p=>p.checked).map(p=>p.value),N=Array.from(t).find(p=>p.checked)?.value;if(L(N,l.blockZones,d,e,!0),h.textContent=e.enemy.health,e.account.health<=0||e.enemy.health<=0){o();return}l.attackZones.forEach(p=>{e.account.health<=0||(L(p,I,d,e,!1),r.textContent=e.account.health)}),o()})}window.onclick=function(d){d.target===s&&(s.style.display="none",e=C(),window.location.hash="#/home")},c.onclick=function(){s.style.display="none",e=C(),window.location.hash="#/home"}}const G={"#/":B,"#/settings":z,"#/login":B,"#/home":A,"#/avatar":D,"#/battle":W};function $(){const n=document.getElementById("app"),e=window.location.hash||"#/",a=G[e];a?a(n):O(n)}window.addEventListener("hashchange",$);window.addEventListener("DOMContentLoaded",$);
+                `,t.append(m),t.append(r),t.scrollTo({top:t.scrollHeight,behavior:"smooth"})})}u(e.account),o();function u(d){const i=document.getElementById("attackBtn"),a=document.querySelectorAll('#attackZones input[type="radio"]'),g=document.querySelectorAll('#defenseZones input[type="checkbox"]');function m(){const r=[...a].filter(l=>l.checked).length===d.attackCount,h=[...g].filter(l=>l.checked).length===d.blockCount;i.disabled=!(r&&h)}a.forEach(r=>{r.addEventListener("change",()=>{[...a].filter(l=>l.checked).length>d.attackCount&&(r.checked=!1),m()})}),g.forEach(r=>{r.addEventListener("change",()=>{[...g].filter(l=>l.checked).length>d.blockCount&&(r.checked=!1),m()})}),i.addEventListener("click",()=>{const r=document.getElementById("playerHP"),h=document.getElementById("enemyHP"),l=A(e.enemy),I=[...g].filter(p=>p.checked).map(p=>p.value),H=Array.from(a).find(p=>p.checked)?.value;if(C(H,l.blockZones,d,e,!0),h.textContent=e.enemy.health,e.account.health<=0||e.enemy.health<=0){o();return}l.attackZones.forEach(p=>{e.account.health<=0||(C(p,I,d,e,!1),r.textContent=e.account.health)}),o()})}window.onclick=function(d){d.target===s&&(s.style.display="none",e=L(),window.location.hash="#/home")},c.onclick=function(){s.style.display="none",e=L(),window.location.hash="#/home"}}const W={"#/":B,"#/settings":U,"#/login":B,"#/home":R,"#/avatar":T,"#/battle":O};function $(){const n=document.getElementById("app"),e=window.location.hash||"#/",t=W[e];t?t(n):z(n)}window.addEventListener("hashchange",$);window.addEventListener("DOMContentLoaded",$);
