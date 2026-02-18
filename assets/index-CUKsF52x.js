@@ -8,7 +8,7 @@
                 </div>
             </div>
         </div>
-    `,document.getElementById("startBtn").addEventListener("click",()=>{const a=document.getElementById("playerName").value.trim();a?(H(a),window.location.hash="#/home"):alert("Введите имя!")})}const x="/assets/home-BL45Uk7K.png",S="/assets/user-BZrB7oB-.png",Z="/assets/setting-DvMGuEO2.png";function b(){return`
+    `,document.getElementById("startBtn").addEventListener("click",()=>{const a=document.getElementById("playerName").value.trim();a?(H(a),window.location.hash="#/home"):alert("Введите имя!")})}const x="/not-fight-club-js/assets/home-BL45Uk7K.png",S="/not-fight-club-js/assets/user-BZrB7oB-.png",Z="/not-fight-club-js/assets/setting-DvMGuEO2.png";function b(){return`
         <header class="header">
             <div class="header__box">
                 <div class="header__logo">Not Fight Club</div>
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-    `;const a=document.getElementById("nameInput"),s=document.getElementById("saveNameBtn");a.addEventListener("input",()=>{const c=a.value.trim();s.disabled=!c||c===e.account.name}),document.getElementById("saveNameBtn").addEventListener("click",()=>{const c=a.value.trim();c?(e=P(c),s.disabled=!0,alert("Имя сохранено!")):alert("Имя не может быть пустым!")})}const T="/assets/atlant-BaX5WXJp.png";function O(n){n.innerHTML=`
+    `;const a=document.getElementById("nameInput"),s=document.getElementById("saveNameBtn");a.addEventListener("input",()=>{const c=a.value.trim();s.disabled=!c||c===e.account.name}),document.getElementById("saveNameBtn").addEventListener("click",()=>{const c=a.value.trim();c?(e=P(c),s.disabled=!0,alert("Имя сохранено!")):alert("Имя не может быть пустым!")})}const T="/not-fight-club-js/assets/atlant-BaX5WXJp.png";function O(n){n.innerHTML=`
         <div class="page">
             <div class="not-found">
                 <div class="not-found__box">
@@ -110,7 +110,7 @@
               </div>
             </div>
         </div>
-    `;const a=document.getElementById("changeBtn"),s=document.getElementById("avatarModal"),c=document.getElementById("characterList"),o=document.getElementById("closeModal");function u(){c.innerHTML="",k.forEach(i=>{const t=document.createElement("img");t.src=i.src,t.alt=`Character ${i.id}`,i.src===e.account.src?t.classList.add("active"):t.onclick=function(){e.account={...e.account,src:i.src},f(e),s.style.display="none",d()},c.appendChild(t)})}function d(){const i=document.querySelector(".character__left");i&&e.account.src&&(i.style.backgroundImage=`url(${e.account.src})`)}window.onclick=function(i){i.target===s&&(s.style.display="none")},o.onclick=function(){s.style.display="none"},a.onclick=function(){u(),s.style.display="block"}}function M(n,e){return n.sort(()=>Math.random()-.5).slice(0,e)}function q(n){const e=M(w,n.attackCount),a=M(w,n.blockCount);return{attackZones:e,blockZones:a}}const W="/assets/winner-DGjo6-_w.png";function G(n){let e=g();if(!e.account.name){window.location.hash="#/login";return}n.innerHTML=`
+    `;const a=document.getElementById("changeBtn"),s=document.getElementById("avatarModal"),c=document.getElementById("characterList"),o=document.getElementById("closeModal");function u(){c.innerHTML="",k.forEach(i=>{const t=document.createElement("img");t.src=i.src,t.alt=`Character ${i.id}`,i.src===e.account.src?t.classList.add("active"):t.onclick=function(){e.account={...e.account,src:i.src},f(e),s.style.display="none",d()},c.appendChild(t)})}function d(){const i=document.querySelector(".character__left");i&&e.account.src&&(i.style.backgroundImage=`url(${e.account.src})`)}window.onclick=function(i){i.target===s&&(s.style.display="none")},o.onclick=function(){s.style.display="none"},a.onclick=function(){u(),s.style.display="block"}}function M(n,e){return n.sort(()=>Math.random()-.5).slice(0,e)}function j(n){const e=M(w,n.attackCount),a=M(w,n.blockCount);return{attackZones:e,blockZones:a}}const q="/not-fight-club-js/assets/winner-DGjo6-_w.png";function W(n){let e=g();if(!e.account.name){window.location.hash="#/login";return}n.innerHTML=`
         ${b()}
         
         <div class="page">
@@ -210,7 +210,7 @@
                 <h2>Win </h2>
                 
                 <div class="modal__img">
-                    <img src=${W} alt="Image winner" >
+                    <img src=${q} alt="Image winner" >
                 </div>
               </div>
             </div>
@@ -232,4 +232,4 @@
                          <span class="red">${l}</span> to <span class="red">${t.attackZone}</span> but ${l}
                          was very lucky and crid his oppenent for <span class="red">${t.damage}</span> damage.
                     </div>
-                `,a.append(m),a.append(r),a.scrollTo({top:a.scrollHeight,behavior:"smooth"})})}u(e.account),o();function u(d){const i=document.getElementById("attackBtn"),t=document.querySelectorAll('#attackZones input[type="radio"]'),v=document.querySelectorAll('#defenseZones input[type="checkbox"]');function m(){const r=[...t].filter(l=>l.checked).length===d.attackCount,h=[...v].filter(l=>l.checked).length===d.blockCount;i.disabled=!(r&&h)}t.forEach(r=>{r.addEventListener("change",()=>{[...t].filter(l=>l.checked).length>d.attackCount&&(r.checked=!1),m()})}),v.forEach(r=>{r.addEventListener("change",()=>{[...v].filter(l=>l.checked).length>d.blockCount&&(r.checked=!1),m()})}),i.addEventListener("click",()=>{const r=document.getElementById("playerHP"),h=document.getElementById("enemyHP"),l=q(e.enemy),I=[...v].filter(p=>p.checked).map(p=>p.value),N=Array.from(t).find(p=>p.checked)?.value;if(L(N,l.blockZones,d,e,!0),h.textContent=e.enemy.health,e.account.health<=0||e.enemy.health<=0){o();return}l.attackZones.forEach(p=>{e.account.health<=0||(L(p,I,d,e,!1),r.textContent=e.account.health)}),o()})}window.onclick=function(d){d.target===s&&(s.style.display="none",e=C(),window.location.hash="#/home")},c.onclick=function(){s.style.display="none",e=C(),window.location.hash="#/home"}}const K={"#/":B,"#/settings":z,"#/login":B,"#/home":A,"#/avatar":D,"#/battle":G};function $(){const n=document.getElementById("app"),e=window.location.hash||"#/",a=K[e];a?a(n):O(n)}window.addEventListener("hashchange",$);window.addEventListener("DOMContentLoaded",$);
+                `,a.append(m),a.append(r),a.scrollTo({top:a.scrollHeight,behavior:"smooth"})})}u(e.account),o();function u(d){const i=document.getElementById("attackBtn"),t=document.querySelectorAll('#attackZones input[type="radio"]'),v=document.querySelectorAll('#defenseZones input[type="checkbox"]');function m(){const r=[...t].filter(l=>l.checked).length===d.attackCount,h=[...v].filter(l=>l.checked).length===d.blockCount;i.disabled=!(r&&h)}t.forEach(r=>{r.addEventListener("change",()=>{[...t].filter(l=>l.checked).length>d.attackCount&&(r.checked=!1),m()})}),v.forEach(r=>{r.addEventListener("change",()=>{[...v].filter(l=>l.checked).length>d.blockCount&&(r.checked=!1),m()})}),i.addEventListener("click",()=>{const r=document.getElementById("playerHP"),h=document.getElementById("enemyHP"),l=j(e.enemy),I=[...v].filter(p=>p.checked).map(p=>p.value),N=Array.from(t).find(p=>p.checked)?.value;if(L(N,l.blockZones,d,e,!0),h.textContent=e.enemy.health,e.account.health<=0||e.enemy.health<=0){o();return}l.attackZones.forEach(p=>{e.account.health<=0||(L(p,I,d,e,!1),r.textContent=e.account.health)}),o()})}window.onclick=function(d){d.target===s&&(s.style.display="none",e=C(),window.location.hash="#/home")},c.onclick=function(){s.style.display="none",e=C(),window.location.hash="#/home"}}const G={"#/":B,"#/settings":z,"#/login":B,"#/home":A,"#/avatar":D,"#/battle":W};function $(){const n=document.getElementById("app"),e=window.location.hash||"#/",a=G[e];a?a(n):O(n)}window.addEventListener("hashchange",$);window.addEventListener("DOMContentLoaded",$);
