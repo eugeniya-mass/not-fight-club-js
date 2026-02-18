@@ -1,35 +1,35 @@
 export const avatars = [
     {
         id: 0,
-        src: '/src/assets/images/avatars/afrodita.png',
+        src: new URL('./../assets/images/avatars/afrodita.png', import.meta.url).href,
     },
     {
         id: 1,
-        src: '/src/assets/images/avatars/apollon.png',
+        src: new URL('./../assets/images/avatars/apollon.png', import.meta.url).href,
     },
     {
         id: 2,
-        src: '/src/assets/images/avatars/demetra.png',
+        src: new URL('./../assets/images/avatars/demetra.png', import.meta.url).href,
     },
     {
         id: 3,
-        src: '/src/assets/images/avatars/gera.png',
+        src: new URL('./../assets/images/avatars/gera.png', import.meta.url).href,
     },
     {
         id: 4,
-        src: '/src/assets/images/avatars/poseidon.png',
+        src: new URL('./../assets/images/avatars/poseidon.png', import.meta.url).href,
     },
     {
         id: 5,
-        src: '/src/assets/images/avatars/zevs.png',
+        src: new URL('./../assets/images/avatars/zevs.png', import.meta.url).href,
     },
     {
         id: 6,
-        src: '/src/assets/images/avatars/herakl.png',
+        src: new URL('./../assets/images/avatars/herakl.png', import.meta.url).href,
     },
     {
         id: 7,
-        src: '/src/assets/images/avatars/helios.png',
+        src: new URL('./../assets/images/avatars/helios.png', import.meta.url).href,
     }
 ]
 
@@ -43,7 +43,7 @@ export const enemies = [
         critMultiplier: 1.5,
         attackCount: 1,
         blockCount: 3,
-        src: '/src/assets/images/enemies/kentavr.png',
+        src: new URL('./../assets/images/enemies/kentavr.png', import.meta.url).href,
     },
     {
         id: 1,
@@ -54,7 +54,7 @@ export const enemies = [
         critMultiplier: 1,
         attackCount: 3,
         blockCount: 2,
-        src: '/src/assets/images/enemies/meduza.png',
+        src: new URL('./../assets/images/enemies/meduza.png', import.meta.url).href,
     },
     {
         id: 2,
@@ -65,7 +65,7 @@ export const enemies = [
         critMultiplier: 2,
         attackCount: 1,
         blockCount: 3,
-        src: '/src/assets/images/enemies/ziklop.png',
+        src: new URL('./../assets/images/enemies/ziklop.png', import.meta.url).href,
     },
     {
         id: 3,
@@ -76,7 +76,7 @@ export const enemies = [
         critMultiplier: 1.5,
         attackCount: 2,
         blockCount: 2,
-        src: '/src/assets/images/enemies/lion.png',
+        src: new URL('./../assets/images/enemies/lion.png', import.meta.url).href,
     },
 ];
 
